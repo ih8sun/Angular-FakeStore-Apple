@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row my-5 mx-2">
+        <div class="col-md-6">
+            <img src="https://pngfre.com/wp-content/uploads/apple-logo-10-1024x1024.png" class="img-fluid" alt="xd">
+        </div>
+        <div class="col-md-6 tarjeta">
+            <div class="text-center">
+                <h2>User Login</h2>
+                <input type="text" class="form-control my-3" [(ngModel)]="usuario" placeholder="Username">
+                <input type="password" class="form-control my-3" [(ngModel)]="contra" placeholder="Password">
+                
+                <div class="d-flex justify-content-between">
+                    <p>Remember</p>
+                    <p>Olvidaste tu Contrasena?</p>
+                </div>
+                <button  (click)="iniciarSesion()" class="btn btn-success">Iniciar Sesion</button>
+            </div>
+        </div>
+    </div>
+</div>

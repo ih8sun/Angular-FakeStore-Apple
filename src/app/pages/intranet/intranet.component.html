@@ -1,0 +1,97 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-6 col-md-12">
+
+            <h2 class="text-center text-primary">
+                Gestor de iPhones (servicio externo)
+            </h2>
+            <p>Total : {{ iphones.length }}</p>
+            <table class="table table-hover">
+                <thead>
+                    <th>ID</th>
+                    <th>NOMBRES</th>
+                    <th>DESCRIPCION</th>
+                    <th>COLOR</th>
+                    <th>PRECIO</th>
+                    <th>CANTIDAD</th>
+                    <th colspan="2">Acciones</th>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let e of iphones">
+
+                        <td>{{ e.id }}</td>
+                        <td>{{ e.nombre }}</td>
+                        <td>{{ e.descripcion | uppercase}}</td>
+                        <td>{{ e.color | uppercase}}</td>
+                        <td>{{ e.precio | currency:'S/.'}}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm" (click)="editar(e)">
+                                Editar
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger btn-sm" (click)="eliminar(e)">
+                                eliminar
+                            </button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between text-center">
+                <button (click)="anterior()" class="btn btn-danger">Anterior</button>
+                <p>Pagina {{currentPage}}</p>
+                <button (click)="siguiente()" class="btn btn-success">Siguiente</button>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="col-6 col-md-12">
+            <h2>iPhones - {{textoForm}}</h2>
+
+            <form [formGroup]="FormIphone" (ngSubmit)="registrar()">
+                <div class="form-group">
+                    <label class="label">Nombre</label>
+                    <input class="form-control" style="max-width: 350px;" type="text" formControlName="nombre">
+                </div>
+                <div class="form-group">
+                    <label class="label">precio</label>
+                    <input class="form-control" style="max-width: 350px;" type="text" formControlName="precio">
+                </div>
+                <div class="form-group">
+                    <label class="label">Capacidad</label>
+                    <input class="form-control" style="max-width: 350px;" type="text" formControlName="capacidad">
+                </div>
+                <div class="form-group">
+                    <label class="label">Color</label>
+                    <input class="form-control" style="max-width: 350px;" type="text" formControlName="color">
+                </div>
+                <div class="form-group">
+                    <label class="label">Barcode</label>
+                    <input class="form-control" style="max-width: 350px;" type="text" formControlName="barcode">
+                </div>
+                <div class="form-group">
+                    <label class="label">Descripcion</label>
+                    <input class="form-control" style="max-width: 350px;" type="text" formControlName="descripcion">
+                </div>
+                <div class="form-group">
+                    <label class="label">URL de Imagen</label>
+                    <input class="form-control" style="max-width: 350px;" type="text" formControlName="imagen">
+                </div>
+                <div class="form-group">
+                    <label class="label">Cantidad</label>
+                    <input class="form-control" style="max-width: 350px;" type="text" formControlName="stock">
+                </div>
+                <p class="text-center mt-3">
+                    <button class="btn btn-success">{{textoForm}}</button>
+                </p>
+            </form>
+
+        </div>
+
+    </div>
+</div>
