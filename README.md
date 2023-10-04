@@ -12,4 +12,4 @@ only remove services and re-adjust the project.
 This project only use Bootstrap. No Taiwild. No others!.
 
 
-![Principal Panel Reference.]("src/assets/img/Principal.png")
+![Principal Panel Reference.](https://github.com/ih8sun/Angular-FakeStore-Apple/blob/3d32c49e7ff6ed66dc53c192a5998816c9754f8f/src/assets/img/Principal.png)
